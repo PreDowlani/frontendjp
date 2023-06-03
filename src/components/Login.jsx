@@ -62,28 +62,11 @@ const Login = () => {
             name="password"
             id="password"
             placeholder="su contraseña"
-            {...register(
-              "password",
-              // {
-              //   pattern:
-              //     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\!\#\@\$\%\&\/\(\)\=\?\*\-\+\-\_\.\:\;\,\]\[\{\}\^])[A-Za-z\d\!\#\@\$\%\&\/\(\)\=\?\*\-\+\-\_\.\:\;\,\]\[\{\}\^]{8,}$/,
-              //   message:
-              //     "La contraseña debe tener al menos 8 caracteres, incluyendo una letra mayúscula, una letra minúscula, un número y un caracter especial permitido: ! # @ $ % & / ( ) = ? * - + _ . : ; , ] [ { } ^",
-              // },
-              { required: true, message: "Requerido" }
-            )}
+            {...register("password", { required: true, message: "Requerido" })}
           />
           {errors.password && errors.password.type === "required" && (
             <span> Required</span>
           )}
-          {/* {errors.password && errors.password.type === "pattern" && (
-            <span>
-              La contraseña debe tener al menos 8 caracteres, incluyendo una
-              letra mayúscula, una letra minúscula, un número y un caracter
-              especial
-            </span>
-          )} */}
-
           <br />
           <button className="form-enviar" type="submit">
             Login
