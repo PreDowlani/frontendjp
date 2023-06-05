@@ -35,10 +35,215 @@
  margin: 0.5rem;
 }
 
+/* ---------Signup--------- */
+
+.contenedor-signup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.signup-form{
+  margin: 3rem;
+  padding: 3rem;
+  background-color: #98FB98;
+  border-radius: 10%;
+}
+
+.signup-form h1{
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: underline;
+}
+
+.inputs{
+  font-size: large;
+  font-style: italic;
+  color: darkolivegreen;
+  font-weight: bolder;
+}
+
+.inputs p{
+  color:gray;
+}
+
+
+.inputs input{
+  padding:0.3rem;
+  margin: 0.5rem;
+}
+
+.form-submit{
+  text-align: center;
+}
+
+.form-submit input{
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: x-large;
+  font-style: italic;
+  background-color:green; 
+  border: 3px solid white;
+  color: white;
+  border-radius: 30%;
+}
+
+/* -------Login----------- */
+
+.contenedor-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* height: 72vh; */
+}
+
+.form-login{
+  background-color: #98FB98;
+  margin: 5.2rem;
+  padding: 5rem;
+  text-align: center;
+  border-radius: 10%;
+}
+
+.form-login h1{
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-decoration: underline;
+}
+
+
+.inputs-login{
+  font-size: large;
+  font-style: italic;
+  color: darkolivegreen;
+  font-weight: bolder;
+}
+
+.inputs-login span{
+  color: gray;
+}
+
+.inputs-login input{
+  padding:0.3rem;
+  margin: 0.5rem;
+}
+
+.btn-login{
+  margin: 0.5rem;
+  padding: 0.7rem;
+  font-weight: bold;
+  font-size: large;
+  font-style: italic;
+  background-color:green; 
+  border: 3px solid white;
+  color: white;
+  border-radius: 30%;
+}
+
+/* --------Footer-Navbar-------- */
+
+.contact-navbar{
+  display: flex;
+  justify-content: space-around;
+  background-color:lightgreen;
+  padding: 1rem;
+}
+
+
+.rights{
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(164, 159, 159);
+  padding: 0.5rem;
+}
+
+
+/* ----------------Contact---------------- */
+
+.contact-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact{
+  background-color: #98FB98;
+  margin: 3rem;
+  padding: 5rem;
+  text-align: center;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  border-radius: 10%;
+}
+
+
+.contact-inputs input{
+  border: none;
+  border-bottom: 2px solid green;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.privacy{
+  font-style: oblique;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+
+.options{
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.contact-send{
+  padding: 1rem;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 20%;
+  background-color: #22c122;
+  color: white;
+  margin: 0.5rem;
+}
+
+.enquiry{
+  font-style: italic;
+}
+
 /* ----------MediaQuery---------- */
 
 @media (max-width: 530px) {
   .nav-container ul {
     flex-direction: column;
+  }
+  .signup-form{
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inputs{
+    font-size: small;
+  }
+
+  .inputs input{
+    padding: 0.1rem;
+    margin: 0.1rem;
+  }
+
+  .form-submit{
+    margin: 0.3rem;
+  }
+
+  .form-submit input{
+    padding: 0.2rem;
+    font-weight: bold;
+    font-size: small;
+    font-style: italic;
+
   }
 }

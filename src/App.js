@@ -7,6 +7,7 @@ import Specialties from "./components/Specialties";
 import Login from "./components/Login"
 import Aboutus from './components/Aboutus';
 import Signup from "./components/Signup";
+import FooterNavbar from './components/FooterNavbar';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/aboutus' element = {<Aboutus/>}/>
           <Route path='/signup' element = {<Signup/>}/>
         </Routes>
+        <FooterNavbar/>
       </Router>
     </div>
   );

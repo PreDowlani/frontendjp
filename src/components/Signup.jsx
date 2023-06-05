@@ -27,38 +27,36 @@ const Signup = () => {
 
   return (
     <div className="contenedor-signup">
-      <div className="form-alta">
-        <h1>Online Register Form :</h1>
+      <div className="signup-form">
+        <h1>Online Register Form : </h1>
         <br />
         <div className="inputs">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor="nombre">Name : </label>
+            <label htmlFor="name">Name : </label>
             <input
               type="text"
-              name="nombre"
-              id="nombre"
-              placeholder="Nombre"
+              name="name"
+              id="name"
+              placeholder="name"
               {...register("name", { minLength: 4, required: true })}
             />
-            {errors.nombre && errors.nombre.type === "required" && (
-              <p>Required</p>
-            )}
-            {errors.nombre && errors.nombre.type === "minLength" && (
+            {errors.name && errors.name.type === "required" && <p>Required</p>}
+            {errors.name && errors.name.type === "minLength" && (
               <p>Minimum 4 characters</p>
             )}
             <br />
-            <label htmlFor="apellidos">Surname : </label>
+            <label htmlFor="surname">Surname : </label>
             <input
               type="text"
-              name="apellidos"
-              id="apellidos"
-              placeholder="apellidos"
+              name="surname"
+              id="surname"
+              placeholder="surname"
               {...register("surname", { minLength: 4, required: true })}
             />
-            {errors.apellidos && errors.apellidos.type === "required" && (
+            {errors.surname && errors.surname.type === "required" && (
               <p className="fallo">Required</p>
             )}
-            {errors.apellidos && errors.apellidos.type === "minLength" && (
+            {errors.surname && errors.surname.type === "minLength" && (
               <p className="fallo">Minimum 4 characters</p>
             )}
 
@@ -93,14 +91,13 @@ const Signup = () => {
               placeholder="password"
               {...register(
                 "password",
+                { required: true },
                 {
                   pattern:
                     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\!\#\@\$\%\&\/\(\)\=\?\*\-\+\-\_\.\:\;\,\]\[\{\}\^])[A-Za-z\d\!\#\@\$\%\&\/\(\)\=\?\*\-\+\-\_\.\:\;\,\]\[\{\}\^]{8,}$/,
                   message:
                     "La contraseña debe tener al menos 8 caracteres, incluyendo una letra mayúscula, una letra minúscula, un número y un caracter especial permitido: ! # @ $ % & / ( ) = ? * - + _ . : ; , ] [ { } ^",
-                },
-
-                { required: true }
+                }
               )}
             />
             {errors.password && errors.password.type === "required" && (
@@ -113,21 +110,16 @@ const Signup = () => {
               </p>
             )}
             <br />
-            <label htmlFor="rol">Your Rol :</label>
+            <label htmlFor="rol">Your Rol : </label>
             <input
               type="text"
               name="rol"
               id="rol"
-              defaultValue="pacient"
+              defaultValue=" Pacient"
               {...register("rol", { required: true })}
             />
-            <div>
-              <input
-                className="form-enviar"
-                type="submit"
-                value="Crear"
-                id="submit"
-              />
+            <div className="form-submit">
+              <input type="submit" value="Create" id="submit" />
             </div>
           </form>
         </div>

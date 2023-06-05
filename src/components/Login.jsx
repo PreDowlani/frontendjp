@@ -32,46 +32,47 @@ const Login = () => {
 
   return (
     <div className="contenedor-login">
-      <div className="formulario-login">
-        <h1> Iniciar Session :</h1>
-
+      <div className="form-login">
+        <h1> Log in : </h1>
         <br />
-        <form className="form-login" onSubmit={handleSubmit(onSubmitLogin)}>
-          <label htmlFor="nombre">Email : </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="introduzca su e-mail"
-            {...register(
-              "email",
-              { required: true, message: "Requerido" },
-              {
-                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "Ingresa un email válido",
-              }
+        <div className="inputs-login">
+          <form onSubmit={handleSubmit(onSubmitLogin)}>
+            <label htmlFor="nombre">Email : </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="enter you'r e-mail"
+              {...register(
+                "email",
+                { required: true, message: "Required" },
+                {
+                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Enter a valid e-mail",
+                }
+              )}
+            />
+            {errors.email && errors.email.type === "required" && (
+              <span> Plese enter a valid email</span>
             )}
-          />
-          {errors.email && errors.email.type === "required" && (
-            <span> Plese enter a valid email</span>
-          )}
-          <br />
-          <label htmlFor="password">Password : </label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="su contraseña"
-            {...register("password", { required: true, message: "Requerido" })}
-          />
-          {errors.password && errors.password.type === "required" && (
-            <span> Required</span>
-          )}
-          <br />
-          <button className="form-enviar" type="submit">
-            Login
-          </button>
-        </form>
+            <br />
+            <label htmlFor="password">Password : </label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="you'r password"
+              {...register("password", { required: true, message: "Required" })}
+            />
+            {errors.password && errors.password.type === "required" && (
+              <span> Required</span>
+            )}
+            <br />
+            <button className="btn-login" type="submit">
+              Login
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
