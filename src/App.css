@@ -173,8 +173,8 @@
 
 .contact{
   background-color: #98FB98;
-  margin: 3rem;
-  padding: 5rem;
+  margin: 1.5rem;
+  padding: 2rem;
   text-align: center;
   font-family:Georgia, 'Times New Roman', Times, serif;
   border-radius: 10%;
@@ -184,8 +184,8 @@
 .contact-inputs input{
   border: none;
   border-bottom: 2px solid green;
-  padding: 0.5rem;
-  font-size: 1.5rem;
+  padding: 0.3rem;
+  font-size: 1.2rem;
   font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -196,13 +196,13 @@
 }
 
 .options{
-  padding: 0.5rem;
-  font-size: 1.5rem;
+  padding: 0.3rem;
+  font-size: 1.2rem;
 }
 
 .contact-send{
   padding: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   border: none;
   border-radius: 20%;
   background-color: #22c122;
@@ -212,6 +212,58 @@
 
 .enquiry{
   font-style: italic;
+}
+
+/* -----------------------Appointment-------------------- */
+
+.appointments{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.appoitnment-form{
+  background-color: #98FB98;
+  margin: 1.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.app-form{
+  font-style: italic;
+  color: darkolivegreen;
+  font-weight: bold;
+}
+
+.app-form input{
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-style: italic;
+}
+
+.select-time{
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+textarea{
+  margin: 0.5rem;
+}
+
+.app-form label{
+  font-size: large;
+}
+
+.app-submit{
+  padding: 1rem;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 20%;
+  background-color: #22c122;
+  color: white;
+  margin: 0.5rem;
 }
 
 /* ----------MediaQuery---------- */

@@ -12,7 +12,7 @@ const FooterNavbar = () => {
         </a>
         <div className="book-app">
           <p>
-            <Link to={"/appointment"}>Online Appointment</Link>
+            <Link to={"/appointments"}>Online Appointment</Link>
           </p>
         </div>
       </div>
