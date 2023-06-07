@@ -20,6 +20,18 @@ const Appointments = () => {
     console.log(data);
   };
 
+  const mostrarDoctor = async (data) => {
+    await axios
+      .get("http://localhost:5000/api/doctors/")
+      .then((response) => {
+        console.log(`Todos los doctores` + response.data.showDoctors);
+      })
+      .catch((error) => {
+        console.log(`no docotr ${error.data}`);
+      });
+  };
+  mostrarDoctor();
+
   //   {doctor,date,time,active,comments}
   return (
     <div className="appointments">
@@ -62,11 +74,16 @@ const Appointments = () => {
             <br />
             <label htmlFor="doctor">Choose a Specialist : </label>
             <select name="specialist" id="specialist" className="select-time">
-              <option value="1">Doctor1</option>
-              <option value="2">Doctor2</option>
+              {/* {data.map((doctor)=>{
+                return (
+                  
+                  <option value="doctor">{doctor}</option>
+                )
+              })} */}
+              {/* <option value="2">Doctor2</option>
               <option value="3">Doctor3</option>
               <option value="4">Doctor4</option>
-              <option value="5">Doctor5</option>
+              <option value="5">Doctor5</option> */}
             </select>
             <br />
             <label htmlFor="date">Date : </label>

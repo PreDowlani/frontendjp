@@ -17,10 +17,10 @@ const FooterNavbar = () => {
         </div>
       </div>
       <div className="rights">
-        <a href="politica">Política de Privacidad</a>
-        <a href="cookies">Política de Cookies</a>
-        <a href="centers">Our Hospitals</a>
-        <a href="work">Work with Us</a>
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Política de Cookies</a>
+        <a href="#">Our Hospitals</a>
+        <a href="#">Work with Us</a>
         <Link to={"/contact"} className="link-contact">
           Contact
         </Link>
