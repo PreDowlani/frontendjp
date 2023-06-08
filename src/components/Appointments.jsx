@@ -1,36 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Appointments = () => {
-  const [registerd, setRegisterd] = useState(true);
+  const [medicos, setMedicos] = useState([]);
+  const [doctorTimings, setDoctorTimings] = useState([]);
 
-  const handelRegisterd = () => {
-    setRegisterd(!registerd);
-  };
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/doctors/", {})
+      .then((response) => {
+        console.log(response.data.medicos);
+        setMedicos(response.data.medicos);
+        const timings = response.data.medicos.map((doc) => doc.time);
+        setDoctorTimings(timings);
+      })
+      .catch((error) => {
+        console.log(`no docotr ${error.data}`);
+      });
+  }, []);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const reservApointment = (data) => {
-    console.log(data);
-  };
-
-  const mostrarDoctor = async (data) => {
-    await axios
-      .get("http://localhost:5000/api/doctors/")
-      .then((response) => {
-        console.log(`Todos los doctores` + response.data.showDoctors);
-      })
-      .catch((error) => {
-        console.log(`no docotr ${error.data}`);
-      });
-  };
-  mostrarDoctor();
 
   //   {doctor,date,time,active,comments}
   return (
@@ -39,7 +34,7 @@ const Appointments = () => {
         <h1>Appointment - Form : </h1>
         <br />
         <div className="app-form">
-          <form onSubmit={handleSubmit(reservApointment)}>
+          <form onSubmit={handleSubmit}>
             <label htmlFor="name">Name : </label>
             <input
               type="text"
@@ -72,18 +67,13 @@ const Appointments = () => {
               <p className="fallo">Please enter a valid email</p>
             )}
             <br />
+
             <label htmlFor="doctor">Choose a Specialist : </label>
+
             <select name="specialist" id="specialist" className="select-time">
-              {/* {data.map((doctor)=>{
-                return (
-                  
-                  <option value="doctor">{doctor}</option>
-                )
-              })} */}
-              {/* <option value="2">Doctor2</option>
-              <option value="3">Doctor3</option>
-              <option value="4">Doctor4</option>
-              <option value="5">Doctor5</option> */}
+              {medicos.map((doctors) => {
+                return <option value="doctor">{doctors.name}</option>;
+              })}
             </select>
             <br />
             <label htmlFor="date">Date : </label>
@@ -91,17 +81,14 @@ const Appointments = () => {
             <br />
             <label htmlFor="time">Choose a Time : </label>
             <select name="time" id="time" className="select-time">
-              <option value="09:30">09:30</option>
-              <option value="10:00">10:00</option>
-              <option value="10:30">10:30</option>
-              <option value="11:00">11:00</option>
-              <option value="11:30">11:30</option>
-              <option value="12:00">12:00</option>
-              <option value="12:30">12:30</option>
-              <option value="13:00">13:00</option>
-              <option value="13:30">13:30</option>
-              <option value="14:00">14:00</option>
-              <option value="14:30">14:30</option>
+              {console.log(doctorTimings)}
+              {doctorTimings.map((timing) => {
+                return (
+                  <option key={timing} value={timing}>
+                    {timing}
+                  </option>
+                );
+              })}
             </select>
             <br />
             <textarea
