@@ -35,6 +35,112 @@
  margin: 0.5rem;
 }
 
+/* ---------------HOME---------------- */
+.home{
+  height: 72.5vh ;
+  background-image: url(https://t3.ftcdn.net/jpg/02/16/47/22/360_F_216472247_cT66WDoS0fp1s3wC7eaykMJNDGVbOBPq.jpg);
+  background-size:cover;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.home h1{
+  font-size: 5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: darkgreen;
+  text-shadow: 2px 2px greenyellow ;
+  /* color: #98FB98; */
+}
+
+.home p{
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: bold;
+  color:#22c122;
+}
+
+.home-btn{
+  padding: 0.5rem;
+  margin: 1.5rem;
+  font-size: 1.5rem;
+  background-color:#98FB98;
+}
+
+.home-link{
+  color: black;
+  text-decoration: none;
+  font-style: italic;
+}
+
+/* ------------------ABOUTUS---------------- */
+.aboutus{
+  height: 72.5vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: #6a874f;
+  background-color: #e3e5e9;
+  font-weight: bold;
+}
+
+.aboutus h2{
+  font-size: 2rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.aboutus-p{
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-family: cursive;
+  
+}
+
+/* ----------------Specialties---------------- */
+.specialties{
+  height: 72.5vh;
+  display: flex;
+  color: #6a874f;
+}
+
+.specialties-img{
+  background-image: url(https://blog.cmecorp.com/hubfs/5%20TRENDS%20IN%20MEDICAL%20OFFICE%20DESIGN.jpg);
+  background-size: cover;
+  width: 100%;
+}
+
+.specialties-p{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #e3e5e9;
+  font-weight: bold;
+}
+
+.specialties-p h2{
+  font-size: 1.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+}
+
+.specialties-p h4{
+  font-size: 1.2rem;
+  text-decoration: underline;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.specialties-p p{
+  font-family: cursive;
+}
+
 /* ---------Signup--------- */
 
 .contenedor-signup{
@@ -42,6 +148,8 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  height: 72.5vh;
+  background-color: #e3e5e9;
 }
 
 .signup-form{
@@ -97,7 +205,8 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  /* height: 72vh; */
+  height: 72.5vh;
+  background-color: #e3e5e9;
 }
 
 .form-login{
@@ -157,7 +266,7 @@
 .rights{
   display: flex;
   justify-content: space-around;
-  background-color: rgb(164, 159, 159);
+  background-color: #babbbe;
   padding: 0.5rem;
 }
 
@@ -169,39 +278,39 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  height: 72.5vh;
+  background-color: #e3e5e9;
 }
 
 .contact{
   background-color: #98FB98;
-  margin: 1.5rem;
-  padding: 2rem;
   text-align: center;
   font-family:Georgia, 'Times New Roman', Times, serif;
   border-radius: 10%;
+  padding: 1rem;
 }
 
 
 .contact-inputs input{
   border: none;
   border-bottom: 2px solid green;
-  padding: 0.3rem;
   font-size: 1.2rem;
   font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 .privacy{
   font-style: oblique;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 0.5rem;
 }
 
 .options{
-  padding: 0.3rem;
-  font-size: 1.2rem;
+  padding: 0.2rem;
+  font-size: 1rem;
 }
 
 .contact-send{
-  padding: 1rem;
+  padding: 0.5rem;
   font-size: 1.2rem;
   border: none;
   border-radius: 20%;
