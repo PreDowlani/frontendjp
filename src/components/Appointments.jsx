@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Appointments = () => {
   const [medicos, setMedicos] = useState([]);
-  const [doctorTimings, setDoctorTimings] = useState([]);
+  const [horarios, setHorarios] = useState([]);
 
   useEffect(() => {
     axios
@@ -13,8 +13,6 @@ const Appointments = () => {
       .then((response) => {
         console.log(response.data.medicos);
         setMedicos(response.data.medicos);
-        const timings = response.data.medicos.map((doc) => doc.time);
-        setDoctorTimings(timings);
       })
       .catch((error) => {
         console.log(`no docotr ${error.data}`);
@@ -27,7 +25,19 @@ const Appointments = () => {
     formState: { errors },
   } = useForm();
 
-  //   {doctor,date,time,active,comments}
+  const handleSpecialistChange = (event) => {
+    const selectedSpecialistId = event.target.value;
+    const selectedSpecialist = medicos.find(
+      (doctor) => doctor._id === selectedSpecialistId
+    );
+
+    if (selectedSpecialist) {
+      setHorarios(selectedSpecialist.time);
+    } else {
+      setHorarios([]);
+    }
+  };
+
   return (
     <div className="appointments">
       <div className="appoitnment-form">
@@ -70,9 +80,18 @@ const Appointments = () => {
 
             <label htmlFor="doctor">Choose a Specialist : </label>
 
-            <select name="specialist" id="specialist" className="select-time">
+            <select
+              name="specialist"
+              id="specialist"
+              className="select-time"
+              onChange={handleSpecialistChange}
+            >
               {medicos.map((doctors) => {
-                return <option value="doctor">{doctors.name}</option>;
+                return (
+                  <option key={doctors._id} value={doctors._id}>
+                    {doctors.name}
+                  </option>
+                );
               })}
             </select>
             <br />
@@ -81,14 +100,12 @@ const Appointments = () => {
             <br />
             <label htmlFor="time">Choose a Time : </label>
             <select name="time" id="time" className="select-time">
-              {console.log(doctorTimings)}
-              {doctorTimings.map((timing) => {
-                return (
-                  <option key={timing} value={timing}>
-                    {timing}
+              {horarios &&
+                horarios.map((time) => (
+                  <option key={time} value={time}>
+                    {time}
                   </option>
-                );
-              })}
+                ))}
             </select>
             <br />
             <textarea

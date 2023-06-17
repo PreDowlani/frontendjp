@@ -18,21 +18,25 @@ const Specialties = () => {
             {" "}
             <h4>Dermatology : </h4> <p> Skin, hair, and nail care.</p>
           </li>
+          <br />
           <li>
             {" "}
             <h4>Ophthalmology : </h4>
             <p>Eye health and vision care.</p>
           </li>
+          <br />
           <li>
             {" "}
             <h4>Pediatrics : </h4>
             <p> Medical care for children.</p>
           </li>
+          <br />
           <li>
             {" "}
             <h4>Cardiology : </h4>
             <p> Heart health and cardiovascular care.</p>
           </li>
+          <br />
           <li>
             {" "}
             <h4>Orthopedics : </h4>
